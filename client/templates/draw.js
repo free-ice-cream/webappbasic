@@ -17,23 +17,61 @@ returnLU: function(){
 return lu.unit;
 },
 newEarth: function(){
-  console.log("newEarth parseFloat(earthBase())  = "+ parseFloat(earthBase()));
-  console.log("newEarth parseFloat(metInputKM())  = "+ parseFloat(metInputKM()));
-  console.log("newEarth  = "+ earthDiameter);
-  var earthDiameter = parseFloat(earthBase()) * parseFloat(metInputKM());
-  console.log("newEarth  = "+ earthDiameter);
-  return earthDiameter;
+  // console.log("newEarth parseFloat(earthBase())  = "+ parseFloat(earthBase()));
+  // console.log("newEarth parseFloat(metInputKM())  = "+ parseFloat(inputKM()));
+
+  // var earthDiameter = parseFloat(earthBase()) * parseFloat(metInputKM());
+  var earthDiameter = parseFloat(earthBase()) * parseFloat(inputKM());
+  // console.log("newEarth  = "+ earthDiameter);
+  // console.log("inputKM() = "+inputKM());
+  //earthDiameter = earthDiameter *100000;// conver to cm from km
+  // console.log("newEarth  = "+ earthDiameter);
+  return convertKMtoCM(earthDiameter).toFixed(2);
 },
 newMoon: function(){
-  var moonDiameter = parseFloat(moonBase()) * parseFloat(metInputKM());
+  // var moonDiameter = parseFloat(moonBase()) * parseFloat(metInputKM());
+  var moonDiameter = parseFloat(moonBase()) * parseFloat(inputKM());
+  //moonDiameter = moonDiameter * 100000;//convert to cm from km
   console.log("newMoon  = "+ moonDiameter);
-  return moonDiameter;
+  return convertKMtoCM(moonDiameter).toFixed(2);
+},
+unitName:function(){
+var unitName = LocalData.findOne({role: "unitName"});
+  return unitName.name;
+},
+getUnitType: function(){
+
+  var unitType = LocalData.findOne({role: "systemChoice"});
+  // console.log("unitType ="+unitType.choice);
+  return "cm";
+  //PUT THIS BACK  LATER :)
+  // if(unitType.choice === "metric"){
+  //
+  //   return "cm";
+  // }else if (unitType.choice ==="imperial") {
+  //   return "inches";
+  // }
 }
 });
 ////////// NON HELPER FUNCTIONS
 function metInputKM(){
   var cM = LocalData.findOne({system: "metric"});// the numbers input
   return cM.unit/1000;
+};
+
+function inputKM(){//either input type cpnverted to meric. tmp until we handle imp measurements properly
+  var cS = LocalData.findOne({role: "systemChoice"});// the numbers input
+  var cM = LocalData.findOne({system: "metric"});// the numbers input
+  var cI = LocalData.findOne({system: "imperial"});// the numbers input
+  if(cS.choice=="metric"){
+    return cM.unit/1000;
+
+  }else if (cS.choice=="imperial") {
+    return (cI.unit*0.0254) /1000;
+  }
+
+
+  // return cM.unit/1000;
 };
 function convertImpToMet(){
   //bla bla
@@ -52,4 +90,8 @@ function moonBase(){
   //
   var mDBase = mD.unit/lU.unit;//
   return mDBase;
+};
+function convertKMtoCM(km){
+  return km * 100000;
+
 };

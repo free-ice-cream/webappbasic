@@ -1,2 +1,2 @@
-Meteor.publish('units', function() { return Units.find();
+  Meteor.publish('units', function() { return Units.find();
 });

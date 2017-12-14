@@ -158,3 +158,176 @@ body {
   margin-bottom: 5px;
   pointer-events: auto;
 }
+
+/*######################################*/
+
+/*SJ Defined*/
+
+/*######################################*/
+
+.container{
+
+  /*background-color: #333;*/
+  flex: 1 auto;
+  /*background-image: url("img/the-moon.jpg");*/
+    display: flex;
+    min-height:100vh;
+    flex-direction: column;
+    background-color: #333333;
+
+}
+
+/*SPLASH PAGE */
+.splashCont{
+  display: flex;
+  min-height:100vh;
+  flex-direction: column;
+  background-color: #333333;
+
+}
+.splashBox1{
+background-image: url("img/the-moon.jpg");
+background-position: left:0px top: 1000px;
+flex: 1 auto;
+background-repeat: no-repeat;
+fill : #333333;
+/*opacity: 0.5;*/
+
+}
+.splashBox2{
+  background-image: url("img/the-moon.jpg");
+  /*background-position: right:100px top: -400px;*/
+  background-position: 0px  42%;
+
+  flex: 1 auto;
+  background-repeat: no-repeat;
+
+}
+.splashBox3{
+  background-image: url("img/the-moon.jpg");
+  background-position: 0px 86%;
+  flex: 1 auto;
+  background-repeat: no-repeat;
+
+}
+.mainText{
+  font-family: "Neues Bauen";
+  font-size: 2em;
+  color: #fff;
+
+}
+.startBtn{
+  font-family: "Neues Bauen";
+  font-size: 3em;
+  color: #fff;
+  background-color: #000;
+}
+.headerText{
+  font-family: "Neues Bauen";
+  font-size: 3em;
+  color: #fff;
+}
+@font-face {
+  font-family: "Neues Bauen";
+  src: url("fonts/NeuesBauen.eot");
+  src: url("fonts/NeuesBauen.woff") format("woff");
+}
+@font-face{
+  font-family: "OCRAS";
+  src: url("fonts/OCRAStd.eot");
+  src: url("fonts/OCRAStd.woff") format("woff");
+}
+.headSpacer{
+height: 5vh;
+
+}
+/*INPUT PANEL*/
+
+.inputCont{
+  background-image: url("img/frosted-plastic.jpeg");
+  /*background-position: 0px 86%;*/
+  flex: 1 auto;
+  background-repeat: no-repeat;
+
+}
+.inputBox1{
+/*background-image: url("img/frosted-plastic.jpeg");*/
+background-color: #ddd;
+
+
+}
+.inputBox2{
+background-color: #ddd;
+
+}
+.inputBox3{
+
+
+}
+.inputBox4{
+
+
+}
+.blackLabel{
+background-color: #000;
+margin: 10px;
+padding: 5px;
+
+}
+.redTape {
+background-color: #f00;
+margin: 10px;
+padding: 5px;
+}
+.labelM{
+  font-family: "OCRAS";
+  font-size: 1em;
+  color: #fff;
+}
+.unitSwitchBox{
+  display: flex;
+  /*flex-direction: column;*/
+  /*border: 10px solid color:gold;*/
+}
+.toggle{
+  max-width: 25vw;
+  flex: 1 auto;
+
+}
+.radio{
+
+  display: flex;
+}
+.form-pt0{
+max-width: 40vw;
+
+}
+.unitName{
+display: flex;
+/*background-color: purple;*/
+}
+.sButton{
+  min-width: 13vh;
+  min-height: 13vh;
+
+}
+.cubeButton{
+  background-image: url("img/button-off-sml.png");
+  max-width: 12vh;
+  max-height: 12vh;
+  background-repeat: no-repeat;
+  font-size: 0.8em;
+}
+.spaceView{
+  background-image: url("img/space-view.png");
+  min-width: 12vw;
+  min-height: 70vw;
+  background-size: 300px 300px;
+  background-repeat: no-repeat;
+}
+.spaceCont{
+  background-image: url("img/frosted-plastic.jpeg");
+  display: flex;
+  min-height:100vh;
+  flex-direction: column;
+}

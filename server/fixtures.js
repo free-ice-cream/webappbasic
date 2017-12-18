@@ -1,38 +1,24 @@
 if (Units.find().count() ===0){
   Units.insert({
-  title: "LU",
-  description: "The average orbital distance of the Moon",
-  si: "km",
-  unit: 385000
+  title: "Ocean Volume",
+  description: "The total measure of the oceans in m3",
+  si: "m3",
+  unit: 1332000000000000
   });
 
   Units.insert({
-  title: "AU",
-  description: "The average orbital distance of the Sun",
-  si: "km",
-  unit: 149598000
+  title: "tinsel-microplastic",
+  description: "The number of peices of 0.1mm size pieces of microplastic that can be made from a strip of tinsel ",
+  si: "number",
+  unit: 32000000
+  });
+  Units.insert({
+  title: "uk households",
+  description: "The number uk housholds",
+  si: "number",
+  unit: 27100000
   });
 
-  Units.insert({
-  title: "ED",
-  description: "The diameter of the Earth",
-  si: "km",
-  unit: 12742
-  });
-
-  Units.insert({
-  title: "MD",
-  description: "The diameter of the Moon",
-  si: "km",
-  unit: 3474
-  });
-
-  Units.insert({
-  title: "SD",
-  description: "The adiameter of the Sun",
-  si: "km",
-  unit: 1391400
-  });
 
 };
 // if (LocalData.find().count() ===0){

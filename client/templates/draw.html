@@ -1,16 +1,48 @@
 <template name= "draw">
-  <div class="spaceCont">
+  <div class="seaCont">
 
-  <div class= "copy jumbotron">
-So what we have done is create new unit called the  {{unitName}}.<br/>
-if we scale down the solar system so the distance to the moon is 1 {{unitName}}
-then we can look at the size of the earth and the moon on that scale too.
-  </div>
-<div class="results jumbotron">
-The earth on the {{unitName}} scale is {{newEarth}} {{getUnitType}}<br/>
-The moon on the {{unitName}} scale is {{newMoon}} {{getUnitType}}
+  <div class= "copy donnytron">
+    <div class="lightbox4 ">
+  So here is the maths<br/>
+  Each string of <a href="https://www.youtube.com/watch?v=afm1PuFZ_Q8">is made </a> from two sheets of plastic that are about 2m by 8cm. These would make <span class="highlight">{{tinselMicroplastics}} 0.1mm <sup>2</sup> </span>pieces of microplastic.<br/>
+  So for your tree thats <span class="highlight">{{yourTree}} </span> pieces in total.<br/>
+  There are about
+  <a href = "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families/bulletins/familiesandhouseholds/2016"> 27,000,000 housholds </a>
+  in the uk and <a href= "http://www.fta.co.uk/export/sites/fta/_galleries/downloads/email_news/christmas_stats_with_footnotes.pdf"> 90 percent </a> of them will put up a christmas tree <br/>
+  So if we take your tree as the model, that's <span class="highlight"> {{microplasticsInUk}} </span>tiny specs of plastic that this tinsel may one day become.<br/>
+  If all that plastic ends up in the sea, we could distribute it so that there are <span class="highlight">{{plasticsInTheOcean}}</span> pieces of plastic in every single m<sup>3</sup> of waters in the ocean. <br/>
 </div>
-<div class="spaceView">
+  </div>
+
+<div class="seaView">
+  <div class="video-container">
+            <script type="text/javascript">
+
+                var videoItem = {
+                    looping:  true,
+                    width:    728,
+                    height:   532,
+                    size:     9264402,
+                    gifUrl:   '//i.imgur.com/vA45FFU.gif',
+                    forceGif: false,
+                    prefer_video: true,
+                    hash:     'vA45FFU',
+                    forceLoadAll: false,
+                }
+            </script>
+            <video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="" style="width: 100vw">
+                <source src="//i.imgur.com/vA45FFU.mp4" type="video/mp4">
+            </video>
+
+
+
+
+
+            <meta itemprop="thumbnailUrl" content="https://i.imgur.com/vA45FFUh.jpg">
+            <meta itemprop="contentURL" content="https://i.imgur.com/vA45FFU.mp4">
+            <meta itemprop="embedURL" content="https://i.imgur.com/vA45FFU.gifv">
+        </div>
+
 </div>
 
 </div>

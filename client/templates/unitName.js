@@ -6,13 +6,13 @@ Template.unitName.events({
   'submit .unitName':function(event){
   event.preventDefault();
   console.log("beep BOOP");
-  var newName=event.target.newUnit.value;
-  var updateName = LocalData.findOne({role: "unitName"});
+  var strings=event.target.strings.value;
+  var updateName = LocalData.findOne({userData: "tinsel"});
   //
-  LocalData.update( updateName._id , {$set: {name: newName}});
-  Router.go("/input");
+  LocalData.update( updateName._id , {$set: {unit: strings}});
+  Router.go("/draw");
 
-  
+
 
   }
 

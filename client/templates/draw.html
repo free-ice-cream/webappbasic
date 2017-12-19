@@ -3,47 +3,64 @@
 
   <div class= "copy donnytron">
     <div class="lightbox4 ">
-  So here is the maths<br/>
-  Each string of <a href="https://www.youtube.com/watch?v=afm1PuFZ_Q8">is made </a> from two sheets of plastic that are about 2m by 8cm. These would make <span class="highlight">{{tinselMicroplastics}} 0.1mm <sup>2</sup> </span>pieces of microplastic.<br/>
-  So for your tree thats <span class="highlight">{{yourTree}} </span> pieces in total.<br/>
-  There are about
-  <a href = "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families/bulletins/familiesandhouseholds/2016"> 27,000,000 housholds </a>
-  in the uk and <a href= "http://www.fta.co.uk/export/sites/fta/_galleries/downloads/email_news/christmas_stats_with_footnotes.pdf"> 90 percent </a> of them will put up a christmas tree <br/>
-  So if we take your tree as the model, that's <span class="highlight"> {{microplasticsInUk}} </span>tiny specs of plastic that this tinsel may one day become.<br/>
-  If all that plastic ends up in the sea, we could distribute it so that there are <span class="highlight">{{plasticsInTheOcean}}</span> pieces of plastic in every single m<sup>3</sup> of waters in the ocean. <br/>
+      <div class= "inner">
+
+  If you put<span class="highlight"> {{userNumber}}</span> strings of tinsel on your tree, that’s <span class="highlight">{{yourTree}} </span>pieces of microplastic on your tree alone.<br/><br/>
+
+  To explain:<br/>
+  A standard string of tinsel <a href="https://www.youtube.com/watch?v=afm1PuFZ_Q8">is made </a>  from two sheets of plastic that are approx 2m by 8cm.  Plastics get broken down into microplastics over time (see the film below for pieces of microplastics that are just 0.01mm<sup>2</sup>).
+  A standard string of tinsel breaks down into<span class="highlight"> three hundred and twenty million 0.01mm<sup>2</sup> pieces of microplastic</span>.<br/><br/>
+
+  Let’s look at how everyone else shares your festive burden.<br/>
+  There are approx <a href = "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families/bulletins/familiesandhouseholds/2016"> 27,000,000 housholds </a> in the UK and <a href= "http://www.fta.co.uk/export/sites/fta/_galleries/downloads/email_news/christmas_stats_with_footnotes.pdf"> 90 percent </a> of them will put up a Christmas tree.<br/><br/>
+
+  So if we take your tinsel/tree ratio as an average, then across the UK we’re looking at <span class="highlight">{{microplasticsInUk}}</span>  microplastic blobs that all this tinsel will one day become.<br/><br/>
+
+  Thats way too many zeros to understand so lets imagine we lovingly scatter all those tiy plastics across the world’s seas and oceans.<br/>
+  Then, (evenly distributed) that would give us <span class="highlight">{{plasticsInTheOcean}} </span>pieces of plastic in every single cubic metre of water in every ocean on this planet.  Not one cubic metre of water on this globe would escape being tainted by the UK’s tinsel. <br/><br/>
+
+  PS: You’re a lost soul this year, but next year may we suggest <a href ="http://www.preloved.co.uk/adverts/list/3723/seasonal-decorations.html?keyword=tinsel">secondhand tinsel?</a>
+
+
+
+
+</div>
 </div>
   </div>
-
-<div class="seaView">
+<div class="lightbox5">
+<div class="seaView ">
   <div class="video-container">
             <script type="text/javascript">
+
 
                 var videoItem = {
                     looping:  true,
                     width:    728,
                     height:   532,
                     size:     9264402,
-                    gifUrl:   '//i.imgur.com/vA45FFU.gif',
+                    // gifUrl:   '//i.imgur.com/vA45FFU.gif',
                     forceGif: false,
                     prefer_video: true,
                     hash:     'vA45FFU',
                     forceLoadAll: false,
                 }
             </script>
-            <video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="" style="width: 100vw">
+            <video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="" class="{{videoScale}}">
+                <div class="overVideo"> boop</div>
                 <source src="//i.imgur.com/vA45FFU.mp4" type="video/mp4">
+
             </video>
 
 
 
 
 
-            <meta itemprop="thumbnailUrl" content="https://i.imgur.com/vA45FFUh.jpg">
+            <!-- <meta itemprop="thumbnailUrl" content="https://i.imgur.com/vA45FFUh.jpg"> -->
             <meta itemprop="contentURL" content="https://i.imgur.com/vA45FFU.mp4">
             <meta itemprop="embedURL" content="https://i.imgur.com/vA45FFU.gifv">
         </div>
 
 </div>
-
+</div>
 </div>
 </template>

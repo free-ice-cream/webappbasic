@@ -1,5 +1,8 @@
 Template.draw.helpers({
-
+userNumber: function(){
+  var uT = LocalData.findOne({userData: "tinsel"});
+  return uT.unit;
+},
 tinselMicroplastics: function(){
   return getTinsel();
 
@@ -16,6 +19,23 @@ microplasticsInUk: function(){
 plasticsInTheOcean: function(){
   console.log("plasticPerM()= "+plasticPerM());
   return plasticPerM();
+},
+videoScale: function(){
+  var currentView=window.innerWidth;
+  var videoWidth;
+  var videoHeight;
+  if(currentView > 400){
+    console.log("..currentView > 400");
+    return "videoSubScale";
+    // videoWidth= currentView *0.7;
+    // videoHeight = videoWidth/4*3;
+    // console.log("videoWidth= "+videoWidth);
+  }else if (currentView <=400) {
+    console.log("..currentView <= 400");
+    return "videoFullScale";
+    // videoWidth=728;
+    // videoHeight =532;
+  };
 }
 
 

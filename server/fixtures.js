@@ -8,7 +8,7 @@ if (Units.find().count() ===0){
 
   Units.insert({
   title: "tinsel-microplastic",
-  description: "The number of peices of 0.1mm size pieces of microplastic that can be made from a strip of tinsel ",
+  description: "The number of peices of 0.01mm size pieces of microplastic that can be made from a strip of tinsel ",
   si: "number",
   unit: 320000000
   });

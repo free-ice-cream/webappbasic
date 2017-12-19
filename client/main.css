@@ -399,9 +399,12 @@ display: flex;
 .lightbox5{
   background-color: rgba(0,0,0,0.5);
   /*margin:15px;*/
-  max-width: 100vw;
+  min-width: 100vw;
   min-height: 45vh;
   margin: auto;
+}
+.lightbox0{
+  background-color: rgba(0,0,0,0.5);
 }
 .donnytron{
 border-radius: 25px;

@@ -5,27 +5,13 @@
     <div class="lightbox4 ">
       <div class= "inner">
 
-  If you put<span class="highlight"> {{userNumber}}</span> strings of tinsel on your tree, that’s <span class="highlight">{{yourTree}} </span>pieces of microplastic on your tree alone.<br/><br/>
-
-  To explain:<br/>
-  A standard string of tinsel <a href="https://www.youtube.com/watch?v=afm1PuFZ_Q8">is made </a>  from two sheets of plastic that are approx 2m by 8cm.  Plastics get broken down into microplastics over time (see the film below for pieces of microplastics that are just 0.01mm<sup>2</sup>).
-  A standard string of tinsel breaks down into<span class="highlight"> three hundred and twenty million 0.01mm<sup>2</sup> pieces of microplastic</span>.<br/><br/>
-
-  Let’s look at how everyone else shares your festive burden.<br/>
-  There are approx <a href = "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families/bulletins/familiesandhouseholds/2016"> 27,000,000 housholds </a> in the UK and <a href= "http://www.fta.co.uk/export/sites/fta/_galleries/downloads/email_news/christmas_stats_with_footnotes.pdf"> 90 percent </a> of them will put up a Christmas tree.<br/><br/>
-
-  So if we take your tinsel/tree ratio as an average, then across the UK we’re looking at <span class="highlight">{{microplasticsInUk}}</span>  microplastic blobs that all this tinsel will one day become.<br/><br/>
-
-  Thats way too many zeros to understand so lets imagine we lovingly scatter all those tiy plastics across the world’s seas and oceans.<br/>
-  Then, (evenly distributed) that would give us <span class="highlight">{{plasticsInTheOcean}} </span>pieces of plastic in every single cubic metre of water in every ocean on this planet.  Not one cubic metre of water on this globe would escape being tainted by the UK’s tinsel. <br/><br/>
-
-  PS: You’re a lost soul this year, but next year may we suggest <a href ="http://www.preloved.co.uk/adverts/list/3723/seasonal-decorations.html?keyword=tinsel">secondhand tinsel?</a>
-
-
-
-
+  {{> UI.dynamic template=tinselUseCheck  }}<br/><br/>
+<div >Finally,  theses lovely christmassy lights below are a video of plankton, the foundation of the oceans foodchain, eating microplasics :)</div>
 </div>
 </div>
+  </div>
+  <div class = "headSpacer lightbox0">
+
   </div>
 <div class="lightbox5">
 <div class="seaView ">
@@ -63,4 +49,46 @@
 </div>
 </div>
 </div>
+</template>
+<template name="tinselTrue">
+  <!-- TRUE<br/> -->
+  If you put<span class="highlight"> {{userNumber}}</span> strings of tinsel on your tree, that’s <span class="highlight">{{yourTree}} </span>pieces of microplastic on your tree alone.<br/><br/>
+
+  To explain:<br/>
+  A standard string of tinsel <a href="https://www.youtube.com/watch?v=afm1PuFZ_Q8" target="_blank">is made </a>  from two sheets of plastic that are approx 2m by 8cm.  Plastics get broken down into microplastics over time (see the film below for pieces of microplastics that are just 0.01mm<sup>2</sup>).
+  A standard string of tinsel breaks down into<span class="highlight"> three hundred and twenty million 0.01mm<sup>2</sup> pieces of microplastic</span>.<br/><br/>
+
+  Let’s look at how everyone else shares your festive burden.<br/>
+  There are approx <a href = "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families/bulletins/familiesandhouseholds/2016" target="_blank"> 27 million housholds </a> in the UK and <a href= "http://www.fta.co.uk/export/sites/fta/_galleries/downloads/email_news/christmas_stats_with_footnotes.pdf" target="_blank"> 90 percent </a> of them will put up a Christmas tree.<br/><br/>
+
+  So if we take your tinsel/tree ratio as an average, then across the UK we’re looking at <span class="highlight">{{microplasticsInUk}}</span>  microplastic blobs that all this tinsel will one day become.<br/><br/>
+
+  Thats way too many zeros to understand so lets imagine we lovingly scatter all those tiy plastics across the world’s seas and oceans.<br/>
+  Then, (evenly distributed) that would give us <span class="highlight">{{plasticsInTheOcean}} </span>pieces of plastic in every single cubic metre of water in every ocean on this planet.  Not one cubic metre of water on this globe would escape being tainted by the UK’s tinsel. <br/><br/>
+
+  PS: You’re a lost soul this year, but next year may we suggest <a href ="http://www.preloved.co.uk/adverts/list/3723/seasonal-decorations.html?keyword=tinsel" target="_blank">secondhand tinsel?</a>
+
+
+
+</template>
+<template name="tinselFalse">
+  <!-- FALSE<br/> -->
+  <!-- If you put<span class="highlight"> {{userNumber}}</span> strings of tinsel on your tree, that’s <span class="highlight">{{yourTree}} </span>pieces of microplastic on your tree alone.<br/><br/> -->
+Well done you! (what’s your bauble situation?)<br/><br/>
+Assuming that not everyone is as Angel Gabriel as you are, let’s look at the numbers:<br/><br/>
+
+  A standard string of tinsel <a href="https://www.youtube.com/watch?v=afm1PuFZ_Q8" target="_blank">is made </a>  from two sheets of plastic that are approx 2m by 8cm.  Plastics get broken down into microplastics over time (see the film below for pieces of microplastics that are just 0.01mm<sup>2</sup>).
+  A standard string of tinsel breaks down into<span class="highlight"> three hundred and twenty million 0.01mm<sup>2</sup> pieces of microplastic</span>.<br/><br/>
+
+  To give you an idea of how everyone else negates your celestial saintliness:<br/>
+  There are approx <a href = "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families/bulletins/familiesandhouseholds/2016" target="_blank"> 27 million housholds </a> in the UK and <a href= "http://www.fta.co.uk/export/sites/fta/_galleries/downloads/email_news/christmas_stats_with_footnotes.pdf" target="_blank"> 90 percent </a> of them will put up a Christmas tree.<br/><br/>
+
+  If every household in the country puts just four humble strings of tinsel on their tree, that’s <span class="highlight">{{microplasticsInUk}}</span> piece of microplastic in every single cubic metre of water in every ocean on this planet.  Not one cubic metre of water on this globe escapes being tainted by the UK’s tinsel. <br/><br/>
+
+  Thats way too many zeros to understand so lets imagine we lovingly scatter all those tiy plastics across the world’s seas and oceans.<br/>
+  Then, (evenly distributed) that would give us <span class="highlight">{{plasticsInTheOcean}} </span>pieces of plastic in every single cubic metre of water in every ocean on this planet.  Not one cubic metre of water on this globe would escape being tainted by the UK’s tinsel. <br/><br/>
+
+
+
+
 </template>

@@ -27,15 +27,7 @@
                     forceLoadAll: false,
                 }
             </script>
-            <video preload="auto" {{autoplay}} muted="muted" loop="loop" webkit-playsinline="" class="{{videoScale}} seaSea">
-
-                <source src="http://i.imgur.com/vA45FFU.mp4" type="video/mp4">
-                  <!-- <source src="https://youtu.be/mGzIz9Ld-sE" type="video/mp4"> -->
-
-
-            </video>
-
-
+            {{> UI.dynamic template=autoPlayCheck}}
 
 
 
@@ -54,14 +46,13 @@
 </template>
 <template name="tinselTrue">
   <!-- TRUE<br/> -->
-  <p><span class="blackLabel">If you decorate with<span class="highlight"> {{userNumber}}</span> strings of tinsel, that’s <span class="highlight">{{yourTree}} </span>pieces of microplastic on your tree alone.<br/>
-  Because microplastics are what plastics become as they degrade.<br/></span></p>
+  <p><span class="blackLabel">If you decorate with<span class="highlight"> {{userNumber}}</span> strings of tinsel, that’s <span class="highlight">{{yourTree}} </span>pieces of microplastic on your tree alone.</span></p>
   <p><span class="blackLabel">Christmas is all about community, so let’s look at how everyone else shares your festive burden.</span></p>
   <p><span class="blackLabel">There are approx <a href = "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families/bulletins/familiesandhouseholds/2016" target="_blank"> 27 million housholds </a> in the UK and <a href= "http://www.fta.co.uk/export/sites/fta/_galleries/downloads/email_news/christmas_stats_with_footnotes.pdf" target="_blank"> 90 percent </a> of them will put up a Christmas tree.</span></p>
   <p><span class="blackLabel">If we take your tinsel/tree ratio as a UK average, then the UK’s tinsel could be broken into some <span class="highlight">{{microplasticsInUk}}</span> microplastic pieces.</span></p>
   <p><span class="blackLabel">To help us imagine that fantastic number let’s imagine the ocean; every ocean, every sea, every bay, every channel, every cubic meter of seawater, from the surface all the way down to the sea bed. If we scatter those tiny tinsel bits evenly throughout this mass of water we would have <span class="highlight">{{plasticsInTheOcean}} bits of microplastic in every single m<sup>3</sup>  </span></span></p>
   <p><span class="blackLabel">Microplastics?<br/>
-  A standard string of tinsel is made from two sheets of plastic that are approx 2m by 8cm.  This one string of tinsel breaks down into three hundred and twenty million 0.01mm2 pieces of microplastic.</span></p>
+  A standard string of tinsel is made from two sheets of plastic that are approx 2m by 8cm.  This one string of tinsel, as it degrades over time it could break down into three hundred and twenty million 0.01mm<sup>2</sup> pieces of microplastic.</span></p>
   <p><span class="blackLabel">PS: You’re a lost soul this year, but next year may we suggest <a href ="http://www.preloved.co.uk/adverts/list/3723/seasonal-decorations.html?keyword=tinsel" target="_blank">secondhand tinsel?</a> </span></p>
 </template>
 <template name="tinselFalse">
@@ -69,7 +60,7 @@
   <!-- If you put<span class="highlight"> {{userNumber}}</span> strings of tinsel on your tree, that’s <span class="highlight">{{yourTree}} </span>pieces of microplastic on your tree alone.<br/><br/> -->
 <p><span class="blackLabel">Well done you! (what’s your bauble situation?)</span></p>
 <p><span class="blackLabel">Assuming that not everyone is as Angel Gabriel as you are, let’s look at the numbers:</span></p>
-<p><span class="blackLabel">A standard string of tinsel  <a href="https://www.youtube.com/watch?v=afm1PuFZ_Q8" target="_blank">is made </a> from two sheets of plastic that are approx 2m by 8cm, and breaks down into three hundred and twenty million 0.01mm<sup>2</sup> pieces of microplastic.</span></p>
+<p><span class="blackLabel">A standard string of tinsel  <a href="https://www.youtube.com/watch?v=afm1PuFZ_Q8" target="_blank">is made </a> from two sheets of plastic that are approx 2m by 8cm. As this degrades over time it could break down into three hundred and twenty million 0.01mm<sup>2</sup> pieces of microplastic.</span></p>
 <p><span class="blackLabel">To give you an idea of how everyone else negates your celestial saintliness:<br/>
   There are approx <a href = "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/families/bulletins/familiesandhouseholds/2016" target="_blank"> 27 million housholds </a> in the UK and <a href= "http://www.fta.co.uk/export/sites/fta/_galleries/downloads/email_news/christmas_stats_with_footnotes.pdf" target="_blank"> 90 percent </a> of them will put up a Christmas tree.</span></p>
 
@@ -77,4 +68,18 @@
 <p><span class="blackLabel">To help us imagine that fantastic number let’s imagine the Ocean; every ocean, every sea, every bay, every channel, every cubic meter of seawater, from the surface all the way down to the sea bed. If we scatter those tiny tinsel bits evenly throughout this mass of water we would have <span class="highlight">{{plasticsInTheOcean}} bits of microplastic in every single m<sup>3</sup>  </span></span></p>
 <!-- <p><span class="blackLabel">Microplastics?<br/>
 A standard string of tinsel is made from two sheets of plastic that are approx 2m by 8cm.  This one string of tinsel breaks down into three hundred and twenty million 0.01mm2 pieces of microplastic.</span></p> -->
+</template>
+<template name="autoPlayTrue">
+<video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="" class="videoSubScale  seaSea">
+
+    <source src="http://i.imgur.com/vA45FFU.mp4" type="video/mp4">
+
+</video>
+</template>
+<template name="autoPlayFalse">
+  <video preload="auto"  controls="controls" muted="muted" loop="loop" webkit-playsinline="" class="videoFullScale seaSea">
+
+      <source src="http://i.imgur.com/vA45FFU.mp4" type="video/mp4">
+
+  </video>
 </template>

@@ -3,9 +3,11 @@ Template.draw.onCreated( function(){
   // return getTinsel() * parseFloat(uT.unit);
   if(uT.unit >= 1){
   this.tinselUse= new ReactiveVar("tinselTrue");
-}else if (uT.unit == 0 || ut.unit ==NaN) {
-  this.tinselUse= new ReactiveVar("tinselFalse");
-}
+  }else if (uT.unit == 0 || ut.unit ==NaN) {
+    this.tinselUse= new ReactiveVar("tinselFalse");
+  };
+  //
+  this.autoPlayModeChange= new ReactiveVar("autoPlayTrue");
 });
 Template.draw.events({
     'click .restart': function() {
@@ -19,14 +21,25 @@ Template.draw.helpers({
     return  Template.instance().tinselUse.get();
 
   },
+  autoPlayCheck: function(){
+    if(window.innerWidth <=400 ){
+      Template.instance().autoPlayModeChange.set("autoPlayFalse")
+    }else {
+      Template.instance().autoPlayModeChange.set("autoPlayTrue");
+    }
+
+    return Template.instance().autoPlayModeChange.get();
+
+
+  },
 userNumber: function(){
   var locBool = Template.instance().tinselUse.get();
   if(locBool== "tinselTrue"){
   var uT = LocalData.findOne({userData: "tinsel"});
   return uT.unit;
-}else if (locBool== "tinselFalse") {
-  return 4;
-}
+  }else if (locBool== "tinselFalse") {
+    return 4;
+  }
 },
 tinselMicroplastics: function(){
   return getTinsel();
@@ -38,11 +51,11 @@ yourTree: function(){
 
 },
 microplasticsInUk: function(){
-  console.log("plasticUK() ="+plasticUK());
+  // console.log("plasticUK() ="+plasticUK());
   return plasticUK();
 },
 plasticsInTheOcean: function(){
-  console.log("plasticPerM()= "+plasticPerM());
+  // console.log("plasticPerM()= "+plasticPerM());
   return plasticPerM();
 },
 videoScale: function(){
@@ -50,13 +63,13 @@ videoScale: function(){
   var videoWidth;
   var videoHeight;
   if(currentView > 400){
-    console.log("..currentView > 400");
+    // console.log("..currentView > 400");
     return "videoSubScale";
     // videoWidth= currentView *0.7;
     // videoHeight = videoWidth/4*3;
     // console.log("videoWidth= "+videoWidth);
   }else if (currentView <=400) {
-    console.log("..currentView <= 400");
+    // console.log("..currentView <= 400");
     return "videoFullScale";
     // videoWidth=728;
     // videoHeight =532;
@@ -66,10 +79,11 @@ autoplay:function() {
     var currentView=window.innerWidth;
     if(currentView<= 400){
       console.log("no autoplay");
+
       return "";
 
     }else {
-      console.log(" autoplay on");
+      // console.log(" autoplay on");
       return "autoplay='autoplay' ";
     }
 }
@@ -101,11 +115,11 @@ yourTree: function(){
 
 },
 microplasticsInUk: function(){
-  console.log("plasticUK() ="+plasticUK());
+  // console.log("plasticUK() ="+plasticUK());
   return plasticUK();
 },
 plasticsInTheOcean: function(){
-  console.log("plasticPerM()= "+plasticPerM());
+  // console.log("plasticPerM()= "+plasticPerM());
   return plasticPerM();
 },
 videoScale: function(){
@@ -113,13 +127,13 @@ videoScale: function(){
   var videoWidth;
   var videoHeight;
   if(currentView > 400){
-    console.log("..currentView > 400");
+    // console.log("..currentView > 400");
     return "videoSubScale";
     // videoWidth= currentView *0.7;
     // videoHeight = videoWidth/4*3;
     // console.log("videoWidth= "+videoWidth);
   }else if (currentView <=400) {
-    console.log("..currentView <= 400");
+    // console.log("..currentView <= 400");
     return "videoFullScale";
     // videoWidth=728;
     // videoHeight =532;
@@ -155,11 +169,11 @@ yourTree: function(){
 
 },
 microplasticsInUk: function(){
-  console.log("plasticUK() ="+plasticUK());
+  // console.log("plasticUK() ="+plasticUK());
   return plasticUK();
 },
 plasticsInTheOcean: function(){
-  console.log("plasticPerM()= "+plasticPerM());
+  // console.log("plasticPerM()= "+plasticPerM());
   return plasticPerM();
 },
 videoScale: function(){
@@ -167,13 +181,13 @@ videoScale: function(){
   var videoWidth;
   var videoHeight;
   if(currentView > 400){
-    console.log("..currentView > 400");
+    // console.log("..currentView > 400");
     return "videoSubScale";
     // videoWidth= currentView *0.7;
     // videoHeight = videoWidth/4*3;
     // console.log("videoWidth= "+videoWidth);
   }else if (currentView <=400) {
-    console.log("..currentView <= 400");
+    // console.log("..currentView <= 400");
     return "videoFullScale";
     // videoWidth=728;
     // videoHeight =532;
@@ -196,7 +210,7 @@ videoScale: function(){
 function getSea(){
   //RETURNS THE VOLUME OF THE OCEAN IN m3
     var oV = Units.findOne({title: "Ocean Volume"});
-    console.log("getSea() returns: "+oV.unit);
+    // console.log("getSea() returns: "+oV.unit);
     return oV.unit;
 
 };
@@ -232,7 +246,7 @@ function plasticUK(){
     // var hUK = Units.findOne({title: "uk households"});
     // // console.log("hUK.unit = "+hUK.unit );
     // return (hUK.unit *.9)*userTinsel();
-    console.log("plasticUK() returns: "+tinselUK() * getTinsel());
+    // console.log("plasticUK() returns: "+tinselUK() * getTinsel());
     return tinselUK() * getTinsel();
 }
 function plasticPerM(){

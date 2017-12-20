@@ -425,17 +425,17 @@ border-radius: 25px;
   flex-direction: column;
 }
 .seaView{
-  background-image: url("img/p1.png");
+  /*background-image: url("img/p1.png");*/
   display: flex;
   min-width: 12vw;
   max-height: 70vw;
   background-size: 300px 300px;
   background-repeat: no-repeat;
-  /*margin: auto;*/
+  margin: auto;
   /*flex-direction: column;*/
 }
 .seaSea{
-  background-image: url("img/p1.png");
+  /*background-image: url("img/p1.png");*/
 }
 .video-container {
     position: relative;
@@ -444,7 +444,7 @@ border-radius: 25px;
     text-align: center;
     z-index:0;
     align: center;
-    /*margin: auto;*/
+    margin: auto;
     /*max-width: 500px;*/
 }
 .videoFullScale{
@@ -460,4 +460,32 @@ border-radius: 25px;
     top:0;
     left:0;
   z-index:1;
+}
+.logo{
+    flex: 0.55 auto;
+  /*background-image: url("img/FIC-transparent-500-358-no-margin.png");
+  /*background-color: rgba(0,0,0,0);*/
+  /*border: 0;*/
+ /*height: 15vw;
+ width:30%;*/
+
+  /*max-width: 3vh;
+  max-height: 2vh;*/
+  /*background-size: 25vw 20vw;*/
+  background-repeat: no-repeat;
+  text-align: center;
+
+  margin-top: 3vh;
+
+  /*background-position: 40%  0px;*/
+
+
+}
+.fItem{
+    flex: 1 auto;
+}
+.fBox{
+  flex: 1 auto;
+
+    display: flex;
 }

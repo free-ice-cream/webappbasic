@@ -220,11 +220,11 @@ background-size: 200%;
 
 }
 .mainText{
-  font-family: "Neues Bauen";
-  font-size: 2em;
+  font-family: "OCRAS";
+  font-size: 1.3em;
   color: #fff;
   text-align: center;
-  line-height: 100%;
+  /*line-height: 100%;*/
   /*padding-top: 15vh;*/
 
 }
@@ -245,19 +245,20 @@ background-size: 200%;
 
   padding-top: 6vh;
 }
+.generalSpace{
+  padding-top: 12vh;
+}
 .copy{
-  font-family: "Neues Bauen";
-  font-size: 1.5em;
+  font-family: "OCRAS";
+  font-size: 1em;
   color: #fff;
-  line-height: 100%;
+  /*line-height: 100%;*/
   /*text-align: center;*/
-
-
 }
 .inner{
-  margin-left: 10px;
+  margin-left: 15px;
   margin-top: 5px;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 .highlight{
   color: #f00;
@@ -299,6 +300,12 @@ background-color: #ddd;
 .blackLabel{
 background-color: #000;
 margin: 10px;
+padding: 5px;
+
+}
+.transparentLabel{
+background-color: rgba(0,0,0,0.5);
+margin: 8px;
 padding: 5px;
 
 }
@@ -421,11 +428,14 @@ border-radius: 25px;
   background-image: url("img/p1.png");
   display: flex;
   min-width: 12vw;
-  min-height: 70vw;
+  max-height: 70vw;
   background-size: 300px 300px;
   background-repeat: no-repeat;
   /*margin: auto;*/
   /*flex-direction: column;*/
+}
+.seaSea{
+  background-image: url("img/p1.png");
 }
 .video-container {
     position: relative;
@@ -433,8 +443,8 @@ border-radius: 25px;
     isolation: isolate;
     text-align: center;
     z-index:0;
-    /*align: center;*/
-
+    align: center;
+    /*margin: auto;*/
     /*max-width: 500px;*/
 }
 .videoFullScale{

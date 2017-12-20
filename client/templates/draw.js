@@ -61,6 +61,14 @@ videoScale: function(){
     // videoWidth=728;
     // videoHeight =532;
   };
+},
+autoplay:function() {
+    var currentView=window.innerWidth;
+    if(currentView<= 400){
+      return "";
+    }else {
+      return "autoplay";
+    }
 }
 });
 ///////here is some bad practice, repeating the above helpers :) /////////

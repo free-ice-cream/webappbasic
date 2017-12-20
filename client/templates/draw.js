@@ -65,9 +65,12 @@ videoScale: function(){
 autoplay:function() {
     var currentView=window.innerWidth;
     if(currentView<= 400){
+      console.log("no autoplay");
       return "";
+
     }else {
-      return "autoplay";
+      console.log(" autoplay on");
+      return "autoplay='autoplay' ";
     }
 }
 });

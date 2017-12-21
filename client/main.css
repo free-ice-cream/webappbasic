@@ -303,6 +303,12 @@ margin: 10px;
 padding: 5px;
 
 }
+.bigblackLabel{
+background-color: #000;
+margin: 15px;
+padding: 10px;
+
+}
 .transparentLabel{
 background-color: rgba(0,0,0,0.5);
 margin: 8px;
@@ -488,4 +494,9 @@ border-radius: 25px;
   flex: 1 auto;
 
     display: flex;
+}
+.punchline{
+  font-family: "OCRAS";
+  font-size: 1.4em;
+  color: #239a23  ;
 }

@@ -1,0 +1,3 @@
+Template.login.helpers({
+
+});

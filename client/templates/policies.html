@@ -1,0 +1,33 @@
+<template name = "policies">
+
+
+  <div class="policyCont">
+    <div class = "headSpacer">
+    </div>
+    <div class = "policyList">
+      <ul>
+        {{#each policy}}
+          {{>pol}}
+        {{/each}}
+      </ul>
+
+    </div>
+
+
+  </div>
+
+
+</template>
+
+<template name="pol">
+  <div class ="polwrap">
+  <li>{{name}}</li>
+
+  <fieldset>
+    <label for="volume">Funding level</label>
+    <!-- <input type="range" id="start" name="volume" min="0" max="11" /> -->
+    <input id="{{id}}" type="range" min="0" max="{{maxFund}}" value="0" step="{{slideStep}}"  onchange="{{setFund}}"/>
+     <!-- onchange="showValue(this.value); changeScrollBar(this.value);" -->
+  </fieldset>
+</div>
+</template>

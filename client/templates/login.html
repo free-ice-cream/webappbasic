@@ -1,13 +1,20 @@
 <template name = "login">
   <div class="headSpacer">
     <span> this is the new web app</span>
+    <br/>
+    {{apiTest}}
   </div>
   <div class="inputBox1 donnytron">
     <div class="inner">
-    <form class="unitName" action="/input" >
+    <form class="playerName" action="/login" >
 
-      <input id="number" type="number" name="strings" value="" class="form-control form-pt0">
-      <!-- <input  name="newUnit"  type="text" value="" placeholder="Unit Name" class="form-control form-pt0"/> -->
+      <!-- <input id="number" type="number" name="strings" value="" class="form-control form-pt0">
+      <input  name="newUnit"  type="text" value="" placeholder="Unit Name" class="form-control form-pt0"/>
+
+      <input  type="submit" value="Submit" class="sButton cubeButton donnytron "/> -->
+
+      <input id="newPlayer" type="text" name="strings" value="" class="form-control form-pt0">
+
       <input  type="submit" value="Submit" class="sButton cubeButton donnytron "/>
 
     </form>

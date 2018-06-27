@@ -11,7 +11,7 @@ Template.layout.helpers({
 // };
 Template.layout.events({
     'click .start': function() {
-      Router.go("/unitname");
+      Router.go("/login");
         //return startButton();
     }
 });

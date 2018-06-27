@@ -1,11 +1,13 @@
 <template name = "login">
   <div class="headSpacer">
-    <span> this is the new web app</span>
+
     <br/>
     {{apiTest}}
   </div>
   <div class="inputBox1 donnytron">
-    <div class="inner">
+    <div class="inner loginCopy">
+      <span> <h1>create a player name</h1></span>
+      <span> <h3>Just add your name and then hit <strong>start </strong>to begin</h3></span>
     <form class="playerName" action="/login" >
 
       <!-- <input id="number" type="number" name="strings" value="" class="form-control form-pt0">
@@ -15,7 +17,7 @@
 
       <input id="newPlayer" type="text" name="strings" value="" class="form-control form-pt0">
 
-      <input  type="submit" value="Submit" class="sButton cubeButton donnytron "/>
+      <input  type="submit" value="Start" class="sButton cubeButton donnytron "/>
 
     </form>
 

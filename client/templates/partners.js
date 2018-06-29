@@ -1,4 +1,4 @@
-Template.layout.helpers({
+Template.partners.helpers({
 // startButton: function(){
 //   console.log("startButton called");
 //   Router.go("/input");
@@ -9,7 +9,7 @@ Template.layout.helpers({
 //   console.log("startButton called");
 //   Router.go("/input");
 // };
-Template.layout.events({
+Template.partners.events({
     'click .start': function() {
       Router.go("/login");
         //return startButton();

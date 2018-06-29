@@ -7,8 +7,14 @@
 var apiSlot = apiData.findOne();
 var apiId=apiSlot._id;
 var foo = apiData.findOne({_id: apiId});
-var meh = foo.apiKey;
-console.log("api meh = "+meh);
+var apiKey = foo.apiKey;
+//
+var urlSlot = apiUurl.findOne();
+var urlId=urlSlot._id;
+var baa = apiUurl.findOne({_id: urlId});
+var apiURL = baa.apiURL;
+console.log("api apiKey = "+apiKey);
+console.log("api apiUrl = "+apiURL);
 
 Template.login.helpers({
   apiTest: function(){
@@ -47,12 +53,13 @@ Template.login.events({
 function createNewPlayer(s){
 //console.log("api_key  = "+api_key);
 var newPlayer={'name': s};
-	 setHeader = function(xhr) { xhr.setRequestHeader("X-API-KEY", meh); }
+	 setHeader = function(xhr) { xhr.setRequestHeader("X-API-KEY", apiKey); }
 //setHeader = function(xhr) { xhr.setRequestHeader("X-API-KEY", "ea2b40c5-77ef-11e8-b325-0c4de9cfe672"); }
 
 	$.ajax({
           // url: 'https://free-ice-cream.appspot.com/v1/players/?player=',
-          url: 'https://hivemind.fic.li/v1/players/?player=',
+          // url: 'https://hivemind.fic.li/v1/players/?player=',
+          url: apiURL+'players/?player=',
           type: 'POST',
           contentType: 'application/json',
           data: JSON.stringify(newPlayer),
@@ -86,10 +93,11 @@ var newPlayer={'name': s};
 function getGameData(){
   var getId=GameData.findOne();
 
-  setHeader = function(xhr) { xhr.setRequestHeader("X-API-KEY",meh); };
+  setHeader = function(xhr) { xhr.setRequestHeader("X-API-KEY",apiKey); };
   $.ajax({
           // url: 'https://free-ice-cream.appspot.com/v1/game',
-          url: 'https://hivemind.fic.li/v1/game',
+          // url: 'https://hivemind.fic.li/v1/game',
+          url: apiURL+'game',
           type: 'GET',
           //contentType: 'application/json',
           // data: JSON.stringify(newPlayer),
@@ -134,12 +142,13 @@ function claimBudget(){
   console.log("playerToken var = "+playerToken);
 ////
 
-    setHeader = function(xhr) { xhr.setRequestHeader("X-API-KEY", meh);xhr.setRequestHeader("X-USER-KEY", playerToken) };
+    setHeader = function(xhr) { xhr.setRequestHeader("X-API-KEY", apiKey);xhr.setRequestHeader("X-USER-KEY", playerToken) };
     $.ajax({
             //console.log("seq 1");
           //  headers: {"X-USER-KEY":playerID},
             // url: 'https://free-ice-cream.appspot.com/v1/players/'+playerId+'/claim_budget',
-            url: 'https://hivemind.fic.li/v1/players/'+playerId+'/claim_budget',
+            // url: 'https://hivemind.fic.li/v1/players/'+playerId+'/claim_budget',
+            url:apiURL+'players/'+playerId+'/claim_budget',
             type: 'PUT',
             //data: playerID,
             contentType: 'application/json',

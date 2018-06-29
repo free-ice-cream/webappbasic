@@ -222,6 +222,31 @@ background-size: 200%;
   text-align: center;
 
 }
+.firstBox1{
+/* background-image: url("img/tree-tinsel.jpeg"); */
+background-image: url("img/network1.png");
+background-position: left:0px top: 1000px;
+/*flex: 1 auto;*/
+background-repeat: no-repeat;
+fill : #333333;
+text-align: center;
+background-size: 200%;
+/*opacity: 0.5;*/
+
+}
+.firstBox2{
+/* background-image: url("img/tree-tinsel.jpeg"); */
+background-image: url("img/network2.png");
+background-position: left:0px top: 1000px;
+/*flex: 1 auto;*/
+background-repeat: no-repeat;
+fill : RGBA(0.5, 255, 255,255);
+text-align: center;
+background-size: 200%;
+/*opacity: 0.5;*/
+
+}
+
 .mainText{
   font-family: "OCRAS";
   font-size: 1.3em;
@@ -254,6 +279,13 @@ background-size: 200%;
 .copy{
   font-family: "OCRAS";
   font-size: 1em;
+  color: #fff;
+  /*line-height: 100%;*/
+  /*text-align: center;*/
+}
+.smallcopy{
+  font-family: "OCRAS";
+  font-size: 0.8em;
   color: #fff;
   /*line-height: 100%;*/
   /*text-align: center;*/
@@ -420,6 +452,20 @@ display: flex;
   min-height: 45vh;
   margin: auto;
 }
+.lightbox6{
+  background-color: rgba(255,255,255,0.95);
+  /*margin:15px;*/
+  min-width: 100vw;
+  min-height: 45vh;
+  margin: auto;
+}
+.lightbox7{
+  background-color: rgba(255,255,255,0.95);
+  /*margin:15px;*/
+  min-width: 100vw;
+  min-height: 20vh;
+  margin: auto;
+}
 .lightbox0{
   background-color: rgba(0,0,0,0.5);
 }
@@ -485,12 +531,13 @@ border-radius: 25px;
   background-repeat: no-repeat;
   text-align: center;
 
-  margin-top: 3vh;
+  margin-top: 8.1vh;
 
   /*background-position: 40%  0px;*/
 
 
 }
+
 .fItem{
     flex: 1 auto;
 }
@@ -523,5 +570,12 @@ border-radius: 25px;
 .loginCopy{
   font-size: 1.1em;
   color: #ffffff  ;
+
+}
+.polList{
+  list-style-type:none;
+}
+.logoBoxOuter {
+
 
 }

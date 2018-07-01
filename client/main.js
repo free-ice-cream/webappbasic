@@ -7,6 +7,7 @@ var foo = apiData.findOne({_id: apiId});
 var apiKey = foo.apiKey;
 var apiURL = foo.api;
 
+//TODO  
 // var url =  'https://free-ice-cream.appspot.com/v1/players/';
 // var api_key = "95e5d50a-5271-4ea0-a6fb-0165bdde92f5";
 // var options = {

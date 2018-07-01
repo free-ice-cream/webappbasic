@@ -65,6 +65,7 @@ Template.pol.helpers({
 
 
 function setFunding(pol,fun){
+  console.log("wtf?");
   var pl=Player.findOne();
   var playerData = Player.findOne({_id: pl._id});
   var playerToken=playerData.token;

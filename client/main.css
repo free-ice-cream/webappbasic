@@ -250,7 +250,7 @@ background-size: 200%;
 .mainText{
   font-family: "OCRAS";
   font-size: 1.3em;
-  color: #fff;
+  color: #d8d2d0;
   text-align: center;
   /*line-height: 100%;*/
   /*padding-top: 15vh;*/
@@ -259,7 +259,7 @@ background-size: 200%;
 .simpleText{
   font-family: "helvetica";
   font-size: 1.3em;
-  color: #fff;
+  color: #d8d2d0;
   text-align: center;
   /*line-height: 100%;*/
   /*padding-top: 15vh;*/

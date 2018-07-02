@@ -242,6 +242,7 @@ function joinTable(){
                //data: JSON.stringify(playerToken),
               success: function(data) {
     			      console.log("join table data == "+data);
+                tableData.insert(data);
 
 
                },

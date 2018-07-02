@@ -73,9 +73,9 @@ var newPlayer={'name': s};
              Player.update(player._id, {$set :{balance: data.balance}});
              Player.update(player._id, {$set :{unclaimedBudget: data.unclaied_budget}});
              Player.update(player._id, {$set : {goal: data.Goal}});
-             console.log("player id/ token= "+data.token);
+             console.log("player  token= "+data.token);
              Player.update(player._id, {$set : {token: data.token}});
-             Player.update(player._id, {$set : {id: data.id}});
+             Player.update(player._id, {$set : {playerId: data.id}});
              for(var i=0; i<data.policies.length;i++) {
                Policies.insert( data.policies[i] )
              }

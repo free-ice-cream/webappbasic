@@ -1,15 +1,4 @@
 var sliders=0;
-// var gd=GameData.findOne();
-// var gameData = GameData.findOne({_id: gd._id});
-// var maxSpend=gameData.max_spend_per_tick;
-// console.log("maxSpend = "+maxSpend);
-// var apiSlot = apiData.findOne();
-// var apiId=apiSlot._id;
-// var foo = apiData.findOne({_id: apiId});
-// var apiKey = foo.apiKey;
-// var apiURL = foo.api;
-
-
 var apiSlot = apiData.findOne();
 var apiId=apiSlot._id;
 var foo = apiData.findOne({_id: apiId});
@@ -19,15 +8,25 @@ var urlSlot = apiUurl.findOne();
 var urlId=urlSlot._id;
 var baa = apiUurl.findOne({_id: urlId});
 var apiURL = baa.apiURL;
-
-
-
+var totFunding=0;
+var sliderLevels = new Array();// somewhere to put all the slider ids and values
+var sliderIds = new Array();// ok os this is a hack. we're jsut gona store each value in its own array. i know , i know....TODO
+var slideStepVal = 30;
 Template.policies.helpers({
   policy: function(){
 
     return Policies.find({});
     //return Policies.find({}, { sort: { createdAt: -1 } });
 
+},
+setVals: function(){
+  console.log(" magic id= "+this.id);
+  // console.log("magic value = "+this.value);
+//  var foo = this.id;
+  sliderLevels.push(0);
+  sliderIds.push(this.id);
+  // console.log("!!slider level = "+this.id +" value ="+sliderLevels[this.id]);//
+  // console.log("sliderLevels.length= "+sliderLevels.length);
 }
 
 });
@@ -50,13 +49,17 @@ Template.pol.helpers({
 
   },
   setFund: function(){
+    console.log("set Fund Called!");
 
-    console.log("this.value= "+this.value);
+  //  console.log("this.value= "+this.value);
     //console.log("i= "+i);
   },
   slideStep: function(){
-    var slidestep = 30;
-    return slidestep;
+    //var slidestep = 30;
+    return slideStepVal;
+  },
+  thisid: function(){
+    console.console.log("this id says ......+");
   }
 
   //  var input = document.getElementById("mySlider");
@@ -65,21 +68,24 @@ Template.pol.helpers({
 
 
 function setFunding(pol,fun){
-  console.log("wtf?");
+
   var pl=Player.findOne();
   var playerData = Player.findOne({_id: pl._id});
   var playerToken=playerData.token;
   //var playerToken ={token:playerID};
-  var playerId=playerData.id;
-  console.log("fun= +"+fun);
-  console.log("pol= +"+pol);
+  var playerId=playerData.playerId;
+  // console.log("fun= +"+fun);
+  // console.log("pol= +"+pol);
   var funFloat = parseFloat(fun);
   // var newPlayer={'name': s};
   var funds =[{'amount': funFloat,'from_id': playerId, 'to_id':pol  }];
-  console.log("funds.amount= "+funds.amount);
-  console.log("funds.to= "+funds.to_id);
-  console.log("playerID var = "+playerId);
-  console.log("playerToken var = "+playerToken);
+  console.log("1 funFloat = = "+funFloat);
+  console.log("1 pol id = = "+pol);
+  // console.log("funds.amount= "+funds.amount);
+  // console.log("funds.to= "+funds.to_id);
+  console.log("1 playerID var = "+playerId);
+  console.log("1 playerToken var = "+playerToken);
+
 ////
 
     setHeader = function(xhr) { xhr.setRequestHeader("X-API-KEY", apiKey);xhr.setRequestHeader("X-USER-KEY", playerToken) };
@@ -99,13 +105,20 @@ function setFunding(pol,fun){
             error: function(error) {  console.log(error); },
             beforeSend: setHeader
           });
+
 }
 Template.pol.events({
- 'change input[type="range"]': function(e,t) {
-  console.log(e.target);
-  console.log(e.target.value);
+ 'change input[type="range"]': function(e) {
+  // console.log(e.target);
+  // console.log(e.target.value);
+   console.log("e.target.id = "+e.target.id);
+   console.log("e.target.value = "+e.target.value);
   // fundTest(e.target.id, e.target.value);
+  // console.log("parent.id= "+parent.id);
+  console.log("## -> e.target.id= "+e.target.id);
   setFunding(e.target.id, e.target.value);
+  // updateFunding(e.target.id, e.target.value);
+
  }
 });
 function fundTest (i,v){
@@ -114,6 +127,79 @@ function fundTest (i,v){
 
 
 }
+function updateFunding(tid,tv){
+  console.log("###tid =  "+tid);
+  console.log("###tv = "+tv);
+
+  // sliderLevels[tid]=tv;
+
+  console.log("sliderLevels[t] = "+sliderLevels[tid]);
+  console.log("sliderLevels.length= "+sliderLevels.length);
+//TODO
+var totFunding1=0;
+  for(i=0 ; i < sliderLevels.length; i++) {// set the curr fund value
+
+    if(tid == sliderIds[i]){
+      sliderLevels[i]=tv;
+    }
+
+  };
+  //totFunding1= getTotFunding();
+  for(j=0 ; j < sliderLevels.length; j++) {// get tot funding
+
+    totFunding1 += parseFloat(sliderLevels[j]);
+
+  }
+  // if(getTotFunding() > getMaxFund()){
+  var thisReduc=0;
+  while((totFunding1 - thisReduc) >= getMaxFund()){
+    console.log("OVERSPEND!!");
+    console.log("totFunding1 - thisReduc = "+(totFunding1 - thisReduc));
+    thisReduc=lowerLevels(tid);
+
+    console.log("thisReduc=="+thisReduc);
+
+
+  }
+
+  console.log("totFunding = "+totFunding1);
+  getTotFunding();
+
+};
+function lowerLevels(exempt){
+  var reduction=0;
+  for(i=0 ; i < sliderLevels.length; i++) {
+    if(sliderIds[i]!= exempt){
+      sliderLevels[i]-= slideStepVal;
+      reduction+=slideStepVal;
+    }
+  }
+return reduction;
+
+}
+function getTotFunding(){
+  var tf =0;
+  for(i=0 ; i < sliderLevels.length; i++) {// get tot funding
+
+     tf += parseFloat(sliderLevels[i]);
+     console.log("getTotFunding tf = "+tf);
+    return tf;
+
+  }
+
+}
+function getMaxFund(){
+  var gd=GameData.findOne();
+  var gameData = GameData.findOne({_id: gd._id});
+  var maxSpend=gameData.max_spend_per_tick;
+  console.log("maxSpend = "+maxSpend);
+
+  return maxSpend;
+}
+
+
+
+//TODO TABLE STUFF
 //
 
 function joinTable(){
@@ -121,13 +207,27 @@ function joinTable(){
     var pl=Player.findOne();
     var playerData = Player.findOne({_id: pl._id});
     var playerToken=playerData.token;
-    //var playerToken ={token:playerID};
-    var playerId=playerData.id;
-    var tableId ="70ed8dba-7955-11e8-8921-0edb985c5d02";//this is fine while we only have one table
+    var playerBalance =playerData.balance;
+    // var tableId =  "350738e8-7953-11e8-8921-0edb985c5d02";// this is "test 1"
+    // var tableId = "9c0e2e10-7dff-11e8-8921-0edb985c5d02";// this is test 3
+    // var tableId = "108b742c-7e01-11e8-8921-0edb985c5d02";//test 4
+    // var tableId ="722b7f5e-7e03-11e8-8921-0edb985c5d02";//test 5
+    // var tableId = "2aa3fa3c-7e06-11e8-8921-0edb985c5d02"// we the curious
+
+    var tableId = "a401a27a-7e43-11e8-8921-0edb985c5d02";//couch
+    console.log("playerToken = "+playerToken);
+    console.log("playerBalance= "+playerBalance);
+    var playerId=playerData.playerId;
+    console.log("playerID= "+playerId);
+    console.log("apiURL+'players/'+playerId+'/table/'+tableId, = "+apiURL+'players/'+playerId+'/table/'+tableId,);
+    console.log("api_key= "+apiKey);
+  //  var tableId ="70ed8dba-7955-11e8-8921-0edb985c5d02";//This is the "datadome" currentluy dead  :)
 
 
+//
 
   ////
+  ///players/{player_id}/table/{table_id}
 
       setHeader = function(xhr) { xhr.setRequestHeader("X-API-KEY", apiKey);xhr.setRequestHeader("X-USER-KEY", playerToken) };
       $.ajax({

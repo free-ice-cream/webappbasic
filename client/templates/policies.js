@@ -216,7 +216,8 @@ function joinTable(){
 
     // var tableId = "a401a27a-7e43-11e8-8921-0edb985c5d02";//couch
     // var tableId = "63d33852-7ea8-11e8-8921-0edb985c5d02";//wills 1
-    var tableId ="88fc9ada-7eab-11e8-8921-0edb985c5d02";//wills 3
+    // var tableId ="88fc9ada-7eab-11e8-8921-0edb985c5d02";//wills 3
+    var tableId ="56074e8a-7ec5-11e8-8921-0edb985c5d02";//wills 4
     console.log("playerToken = "+playerToken);
     console.log("playerBalance= "+playerBalance);
     var playerId=playerData.playerId;

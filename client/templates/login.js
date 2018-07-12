@@ -4,12 +4,12 @@
 // });
 //var api_key = LocalData.findOne();
 // console.log("api_key  = "+apiData.findOne());
-var apiSlot = apiData.findOne();
+var apiSlot = apiData.findOne();// a hacky way of storing and retrieving the api key
 var apiId=apiSlot._id;
 var foo = apiData.findOne({_id: apiId});
 var apiKey = foo.apiKey;
 //
-var urlSlot = apiUurl.findOne();
+var urlSlot = apiUurl.findOne();// a hacky way of storing andretrieving the api url
 var urlId=urlSlot._id;
 var baa = apiUurl.findOne({_id: urlId});
 var apiURL = baa.apiURL;
@@ -76,11 +76,12 @@ var newPlayer={'name': s};
              console.log("player  token= "+data.token);
              Player.update(player._id, {$set : {token: data.token}});
              Player.update(player._id, {$set : {playerId: data.id}});
+             console.log("from POST data: playerId= "+data.id);
              for(var i=0; i<data.policies.length;i++) {
                Policies.insert( data.policies[i] )
              }
              getGameData();
-             claimBudget();
+              // claimBudget();
              Router.go("/policies");
 
            },
@@ -92,7 +93,7 @@ var newPlayer={'name': s};
 };
 function getGameData(){
   var getId=GameData.findOne();
-
+  console.log("getGameData()  getId._id= "+getId._id);
   setHeader = function(xhr) { xhr.setRequestHeader("X-API-KEY",apiKey); };
   $.ajax({
           // url: 'https://free-ice-cream.appspot.com/v1/game',
@@ -108,6 +109,7 @@ function getGameData(){
              GameData.update(getId._id, {$set: {max_spend_per_tick: data.max_spend_per_tick}});
              console.log("GameData updated");
             console.log(GameData.find({}));
+            claimBudget();// calling from mere to try an densure we have gamedata before trying to use it
              //
              // game_year:0,
              // game_year_start:"",
@@ -132,14 +134,17 @@ function getGameData(){
 };
 function claimBudget(){
   var pl=Player.findOne();
-  var playerData = Player.findOne({_id: pl._id});
+  // var playerData = Player.findOne({_id: pl.id});
+  var playerData = Player.findOne({_id: pl.playerId});
+  console.log("~ playerData = "+playerData);
   var playerToken=playerData.token;
+  console.log("~ playerToken = "+playerToken);
   //var playerToken ={token:playerID};
   var playerId=playerData.id;
 
 
-  console.log("playerID var = "+playerId);
-  console.log("playerToken var = "+playerToken);
+  console.log("~ playerID var = "+playerId);
+  console.log("~ playerToken var = "+playerToken);
 ////
 
     setHeader = function(xhr) { xhr.setRequestHeader("X-API-KEY", apiKey);xhr.setRequestHeader("X-USER-KEY", playerToken) };

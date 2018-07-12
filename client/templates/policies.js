@@ -8,10 +8,17 @@ var urlSlot = apiUurl.findOne();
 var urlId=urlSlot._id;
 var baa = apiUurl.findOne({_id: urlId});
 var apiURL = baa.apiURL;
+//
+var tabId = tableLogin.findOne();
+console.log("tabId= "+tabId);
+var tab_id=tabId._id;
+var boo = tableLogin.findOne({_id: tab_id});
+var tableUuid = boo.tableId;
+//
 var totFunding=0;
 var sliderLevels = new Array();// somewhere to put all the slider ids and values
 var sliderIds = new Array();// ok os this is a hack. we're jsut gona store each value in its own array. i know , i know....TODO
-var slideStepVal = 30;
+var slideStepVal = 10;
 Template.policies.helpers({
   policy: function(){
 
@@ -217,12 +224,13 @@ function joinTable(){
     // var tableId = "a401a27a-7e43-11e8-8921-0edb985c5d02";//couch
     // var tableId = "63d33852-7ea8-11e8-8921-0edb985c5d02";//wills 1
     // var tableId ="88fc9ada-7eab-11e8-8921-0edb985c5d02";//wills 3
-    var tableId ="56074e8a-7ec5-11e8-8921-0edb985c5d02";//wills 4
+    //var tableId ="56074e8a-7ec5-11e8-8921-0edb985c5d02";//wills 4
+
     console.log("playerToken = "+playerToken);
     console.log("playerBalance= "+playerBalance);
     var playerId=playerData.playerId;
     console.log("playerID= "+playerId);
-    console.log("apiURL+'players/'+playerId+'/table/'+tableId, = "+apiURL+'players/'+playerId+'/table/'+tableId,);
+    console.log("apiURL+'players/'+playerId+'/table/'+tableId, = "+apiURL+'players/'+playerId+'/table/'+tableUuid,);
     console.log("api_key= "+apiKey);
   //  var tableId ="70ed8dba-7955-11e8-8921-0edb985c5d02";//This is the "datadome" currentluy dead  :)
 

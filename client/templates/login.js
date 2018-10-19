@@ -65,7 +65,7 @@ var newPlayer={'name': s};
           data: JSON.stringify(newPlayer),
           success: function(data) {
 			      console.log(data);
-            console.log("yets success of sorts");
+            // console.log("yets success of sorts");
              var player= Player.findOne();
              // console.log("player.balance= "+player.balance);
              // console.log("data.balance= "+data.balance);
@@ -76,7 +76,8 @@ var newPlayer={'name': s};
              console.log("player  token= "+data.token);
              Player.update(player._id, {$set : {token: data.token}});
              Player.update(player._id, {$set : {playerId: data.id}});
-             console.log("from POST data: playerId= "+data.id);
+             Player.update(player._id, {$set : {playerId2: data.id}});
+             // console.log("~~from POST data: playerId= "+data.id);
              for(var i=0; i<data.policies.length;i++) {
                Policies.insert( data.policies[i] )
              }
@@ -133,14 +134,21 @@ function getGameData(){
 
 };
 function claimBudget(){
+  //SJ 18/09/18
+  // Looks lik ethis is all wrong
+  // swapping out to see if i can make this function work without sending the {_id:  xxx.playerId } object
   var pl=Player.findOne();
   // var playerData = Player.findOne({_id: pl.id});
-  var playerData = Player.findOne({_id: pl.playerId});
-  console.log("~ playerData = "+playerData);
-  var playerToken=playerData.token;
-  console.log("~ playerToken = "+playerToken);
+  // var playerData = Player.findOne({_id: pl.playerId});
+  // console.log("~ playerData = "+playerData);
+  // var playerToken=playerData.token; // comment ed this out
+
+  var playerToken=pl.token;
+  // console.log("~ playerToken = "+playerToken);
   //var playerToken ={token:playerID};
-  var playerId=playerData.id;
+  // var playerId=playerData.id; // Commented thei sout
+    // var playerId=pl._id;
+    var playerId=pl.playerId2;
 
 
   console.log("~ playerID var = "+playerId);
@@ -159,7 +167,7 @@ function claimBudget(){
             contentType: 'application/json',
              //data: JSON.stringify(playerToken),
             success: function(data) {
-  			      console.log("budget data == "+data);
+  			      console.log("budget Claimed! data == "+data);
 
 
              },

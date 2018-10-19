@@ -24,14 +24,14 @@
         <ul>
           {{#each policy}}
             {{>pol}}
-            {{setVals}}
+            <!-- {{setVals}} -->
           {{/each}}
         </ul>
     </div>
     </div>
     <div class=" splashBox3  donnytron">
 <div class="mainText lightbox2 donnytron">
-        <!-- {{>joinTableBut}} -->
+        {{>joinTableBut}}
       </div>
       </div>
 
@@ -53,6 +53,7 @@
     <!-- <input type="range" id="start" name="volume" min="0" max="11" /> -->
     <input id="{{id}}" type="range" min="0" max="{{maxFund}}" value="0" step="{{slideStep}}"  onchange="{{setFund}}"/>
      <!-- onchange="showValue(this.value); changeScrollBar(this.value);" -->
+     {{setVals thisid}}
   </fieldset>
 </div>
 </template>

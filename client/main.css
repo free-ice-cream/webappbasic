@@ -194,10 +194,11 @@ a:link {
 }
 .splashBox1{
 /* background-image: url("img/tree-tinsel.jpeg"); */
-background-image: url("img/network1.png");
+/* background-image: url("img/network1.png"); */
+background-image: url("img/block.png");
 background-position: left:0px top: 1000px;
 /*flex: 1 auto;*/
-background-repeat: no-repeat;
+background-repeat: repeat;
 fill : #333333;
 text-align: center;
 background-size: 200%;
@@ -206,19 +207,21 @@ background-size: 200%;
 }
 .splashBox2{
   /* background-image: url("img/tree-tinsel.jpeg"); */
-  background-image: url("img/network1.png");
+  /* background-image: url("img/network1.png"); */
+  background-image: url("img/block.png");
   /*background-position: right:100px top: -400px;*/
   background-position: 0px  42%;
   background-size: 200%;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 
 }
 .splashBox3{
   /* background-image: url("img/tree-tinsel.jpeg"); */
-  background-image: url("img/network1.png");
+  /* background-image: url("img/network1.png"); */
+  background-image: url("img/block.png");
   background-position: 0px 95%;
   background-size: 200%;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   text-align: center;
 
 }
@@ -248,7 +251,7 @@ background-size: 200%;
 }
 
 .mainText{
-  font-family: "OCRAS";
+  font-family: "Rational";
   font-size: 1.3em;
   color: #d8d2d0;
   text-align: center;
@@ -257,7 +260,7 @@ background-size: 200%;
 
 }
 .simpleText{
-  font-family: "helvetica";
+  font-family: "Rational";
   font-size: 1.3em;
   color: #d8d2d0;
   text-align: center;
@@ -266,7 +269,7 @@ background-size: 200%;
 
 }
 .startBtn{
-  font-family: "Neues Bauen";
+  font-family: "Rational";
   font-size: 3em;
   color: #fff;
   background-color: #000;
@@ -274,7 +277,7 @@ background-size: 200%;
 
 }
 .headerText{
-  font-family: "Neues Bauen";
+  font-family: "Rational";
   font-size: 2em;
   color: #fff;
 }
@@ -286,14 +289,14 @@ background-size: 200%;
   padding-top: 12vh;
 }
 .copy{
-  font-family: "OCRAS";
+  font-family: "Rational";
   font-size: 1em;
   color: #fff;
   /*line-height: 100%;*/
   /*text-align: center;*/
 }
 .smallcopy{
-  font-family: "OCRAS";
+  font-family: "Rational";
   font-size: 0.8em;
   color: #fff;
   /*line-height: 100%;*/
@@ -316,6 +319,12 @@ background-size: 200%;
   font-family: "OCRAS";
   src: url("fonts/OCRAStd.eot");
   src: url("fonts/OCRAStd.woff") format("woff");
+}
+@font-face{
+  font-family:"Rational";
+  src: url("fonts/rational/37E4B3_0_0.eot");
+  src: url("fonts/rational/37E4B3_0_0.woff") format("woff");
+
 }
 .headSpacer{
 height: 3vh;

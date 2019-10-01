@@ -243,8 +243,8 @@ function joinTable(){
     // var tableId = "63d33852-7ea8-11e8-8921-0edb985c5d02";//wills 1
     // var tableId ="88fc9ada-7eab-11e8-8921-0edb985c5d02";//wills 3
     //var tableId ="56074e8a-7ec5-11e8-8921-0edb985c5d02";//wills 4
-    var tableId = "658ceee-d3b7-11e8-8921-0edb985c5d02";//watchet-
-
+    // var tableId = "378f71e6-7193-11e9-844d-0edb985c5d02";//TODO THIS NEEDS TO BE ENTERED MANUALLY ATM !!! I KNOW!
+    var tableId = "8d160f46-e43c-11e9-844d-0edb985c5d02";
     console.log("playerToken = "+playerToken);
     console.log("playerBalance= "+playerBalance);
     var playerId=playerData.playerId;

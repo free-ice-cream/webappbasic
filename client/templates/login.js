@@ -13,8 +13,10 @@ var urlSlot = apiUurl.findOne();// a hacky way of storing andretrieving the api 
 var urlId=urlSlot._id;
 var baa = apiUurl.findOne({_id: urlId});
 var apiURL = baa.apiURL;
-console.log("api apiKey = "+apiKey);
-console.log("api apiUrl = "+apiURL);
+var charlie = "kieth";
+console.log(charlie);
+// console.log("api apiKey = "+apiKey);
+// console.log("api apiUrl = "+apiURL);
 
 Template.login.helpers({
   apiTest: function(){
@@ -23,32 +25,45 @@ Template.login.helpers({
   },
   auth: function(){
     console.log("auth");
+  },
+  selectForm: function(){
+    let fix = Player.findOne();
+    //console.log("fix.playerName= "+fix.playerName);
+    if(fix.playerName == "this is a really unlikley name"){
+      return Template.createNew;
+    }else{
+      return Template.destroyOld;
+    }
   }
 
 
 
-});
-Template.login.events({
-  //event.preventDefault();
-  'submit .playerName':function(event){
-    event.preventDefault();
-    console.log("beep BOOP");
-    var strings=event.target.strings.value;
-    console.log(strings);
-    var fix = Player.findOne();
-    Player.update(fix._id, {$set :{playerName: strings}});
-    var playerData =  createNewPlayer(strings);
-    var pn = Player.findOne({playerName: strings});
-    console.log("collections says"+pn.playerName );
-
-
-  //  Router.go("/policies");
-
-  }
-
-
 
 });
+// Template.login.events({
+//   //event.preventDefault();
+//   'submit .playerName':function(event){
+//     event.preventDefault();
+//     console.log("beep BOOP");
+//     var strings=event.target.strings.value;
+//     console.log(strings);
+//     var fix = Player.findOne();
+//     console.log("fix.playerName= "+fix.playerName);
+//     if(fix.playerName == "this is a really unlikley name"){
+//       console.log("now create a new player");
+//
+//       Player.update(fix._id, {$set :{playerName: strings}});
+//       var playerData =  createNewPlayer(strings);
+//       var pn = Player.findOne({playerName: strings});
+//       console.log("collections says"+pn.playerName );
+//
+//     }else{
+//       console.log("sorry charlie did you want to kill that player?");
+//     }
+//
+//   //  Router.go("/policies");
+//   }
+// });
 
 function createNewPlayer(s){
 //console.log("api_key  = "+api_key);
@@ -177,3 +192,85 @@ function claimBudget(){
           });
 
 }
+Template.createNew.helpers({
+
+});
+Template.destroyOld.helpers({
+  whoami: function(){
+    
+    let pn = Player.findOne({playerName: strings});
+    console.log("collections says"+pn.playerName );
+    return pn.playerName;
+  }
+
+});
+Template.createNew.events({
+  //event.preventDefault();
+  'submit .playerName':function(event){
+    event.preventDefault();
+    console.log("beep BOOP");
+    var strings=event.target.strings.value;
+    console.log(strings);
+    var fix = Player.findOne();
+    console.log("fix.playerName= "+fix.playerName);
+    if(fix.playerName == "this is a really unlikley name"){
+      console.log("now create a new player");
+      Player.update(fix._id, {$set :{playerName: strings}});
+      var playerData =  createNewPlayer(strings);
+      var pn = Player.findOne({playerName: strings});
+      console.log("collections says"+pn.playerName );
+    }else{
+      console.log("sorry charlie did you want to kill that player?");
+    }
+  }
+  //
+
+
+});
+
+Template.destroyOld.events({
+  //event.preventDefault();
+  'submit .playerName':function(event){
+    event.preventDefault();
+    Player.remove({});
+    GameData.remove({});
+    Policies.remove({});
+    // console.log("Player.length = ",Player.find().count());
+
+    Player.insert({
+      playerName: "this is a really unlikley name",
+      goal: {},
+      policies:{},
+      table: "",
+      token: "",
+      unclaimedBudget: 0,
+      balance: 0,
+      playerId:""
+
+    });
+    //
+    GameData.insert({
+      budget_per_cycle: 0,
+      game_year:0,
+      game_year_start:"",
+      max_spend_per_tick:0,
+      next_game_year:0,
+      next_game_year_start:null,
+      total_active_players_inflow:0,
+      total_players_inflow:0,
+      version:""
+    })
+
+    // console.log("Player.length = ",Player.find().count());
+    console.log("blammo");
+
+
+}
+// ,
+// 'submit .keepPlayer':function(event){
+//   event.preventDefault();
+//
+//   //Router.go('/policies');
+// }
+
+});

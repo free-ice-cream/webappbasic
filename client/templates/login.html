@@ -14,22 +14,36 @@
   </div>
   <div class=" splashBox3  donnytron">
     <div class="mainText lightbox1 donnytron">
-    <form class="playerName" action="/login" >
-
-      <!-- <input id="number" type="number" name="strings" value="" class="form-control form-pt0">
-      <input  name="newUnit"  type="text" value="" placeholder="Unit Name" class="form-control form-pt0"/>
-
-      <input  type="submit" value="Submit" class="sButton cubeButton donnytron "/> -->
-
-      <input id="newPlayer" type="text" name="strings" value="" placeHolder="add your name here" class="form-control form-pt0">
-
-      <input  type="submit" value="Start" class="sButton cubeButton donnytron "/>
-
-    </form>
+      {{> selectForm}}
   </div>
   </div>
 
   </div>
 </div>
 
+</template>
+
+<template name="createNew">
+  <form class="playerName" action="/login" >
+    <input id="newPlayer" type="text" name="strings" value="" placeHolder="add your name here" class="form-control form-pt0">
+    <input  type="submit" value="Start" class="sButton cubeButton donnytron "/>
+  </form>
+</template>
+
+<template name="destroyOld">
+  <div class="">
+    Are you sure you want to kill this player
+    </div>
+  <form class="playerName" action="/login" >
+
+    <input  type="submit" value="Kill" class="sButton cubeButton donnytron "/>
+  </form>
+
+  <div class="">
+    <a href="/policies"> or do you want to continue with these organisations</a>
+    </div>
+  <!-- <form class="keepPlayer" action="/login" >
+
+    <input  type="submit" value="keep" class="sButton cubeButton donnytron "/>
+  </form> -->
 </template>

@@ -39,6 +39,9 @@ setVals: function(){
   // console.log("!!slider level = "+this.id +" value ="+sliderLevels[this.id]);//
   // console.log("sliderLevels.length= "+sliderLevels.length);
   // this.value=0;
+},
+kill: function(){
+  Router.go("/login");
 }
 
 });
